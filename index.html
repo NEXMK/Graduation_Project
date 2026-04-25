@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatCSV - Chat With Your Data</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Chat<span class="highlight">CSV</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="signupBtn">Get Started</button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="badge">✨ AI-Powered Data Analysis</div>
+                <h1 class="hero-title">
+                    Talk to Your <span class="gradient-text">CSV Data</span> <br> Like a Colleague
+                </h1>
+                <p class="hero-subtitle">
+                    Upload your CSV file and instantly start asking questions. Our intelligent chatbot understands your
+                    data, finds insights, and generates reports in seconds.
+                </p>
+                <div class="cta-container">
+                    <button class="btn btn-primary btn-large cta-btn"
+                        onclick="document.getElementById('upload-section').scrollIntoView({behavior: 'smooth'})">
+                        Start Chatting Now
+                        <svg viewBox="0 0 24 24" fill="none" class="arrow-icon">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <p class="trust-text">No credit card required • Secure processing</p>
+                </div>
+            </div>
+
+            <div id="upload-section" class="upload-container">
+                <div class="glass-card upload-card" id="drop-zone">
+                    <div class="upload-icon-wrapper">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3>Upload your CSV File</h3>
+                    <p class="upload-hint">Drag and drop your file here, or click to browse</p>
+                    <input type="file" id="file-input" accept=".csv" class="hidden-input">
+                    <button class="btn btn-outline upload-btn"
+                        onclick="document.getElementById('file-input').click()">Browse Files</button>
+
+                    <div class="file-info hidden" id="file-info">
+                        <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span id="file-name" class="file-name">dataset.csv</span>
+                        <button class="remove-btn" id="remove-file">✕</button>
+                    </div>
+                    <button class="btn btn-primary start-chat-btn hidden" id="start-chat">Initialize Chat
+                        Interface</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <h2 class="section-title">Why Use <span class="highlight">ChatCSV</span>?</h2>
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Insights</h3>
+                    <p>No need to write complex SQL or Python scripts. Just ask questions in plain English and get
+                        immediate answers.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is processed securely and is never used to train global models. We respect your
+                        privacy.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Smart Visualization</h3>
+                    <p>Ask for charts or trends, and our AI will automatically suggest the best way to visualize your
+                        metrics.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="steps-section">
+            <h2 class="section-title">How It <span class="highlight">Works</span></h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Upload File</h3>
+                        <p>Simply drop your .csv file into the upload zone.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>AI Analysis</h3>
+                        <p>Our engine automatically understands your columns and data types.</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Start Chatting</h3>
+                        <p>Ask questions, request summaries, and discover hidden trends.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon">📊</span>
+                    <span class="logo-text">Chat<span class="highlight">CSV</span></span>
+                </div>
+                <p>Empowering teams to understand their data instantly without coding.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Product</h4>
+                    <a href="#">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Use Cases</a>
+                </div>
+                <div class="link-column">
+                    <h4>Resources</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Support</a>
+                </div>
+                <div class="link-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ChatCSV. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════ AUTH MODAL ═══════════════════ -->
+    <div class="modal-backdrop" id="authBackdrop">
+        <div class="modal-card glass-card">
+
+            <div class="modal-tabs">
+                <button class="modal-tab active" id="tabSignIn" data-target="panelSignIn">Sign In</button>
+                <button class="modal-tab" id="tabSignUp" data-target="panelSignUp">Sign Up</button>
+                <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+            </div>
+
+            <!-- Sign In -->
+            <div class="modal-panel active" id="panelSignIn">
+                <p class="modal-subtitle">Welcome back 👋</p>
+                <form class="auth-form" id="formSignIn" novalidate>
+                    <div class="field-group">
+                        <label for="siEmail">Email</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">✉️</span>
+                            <input type="email" id="siEmail" placeholder="you@example.com" required autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="siPassword">Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="siPassword" placeholder="••••••••" required autocomplete="current-password">
+                            <button type="button" class="toggle-pw">👁️</button>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label class="checkbox-label"><input type="checkbox"> Remember me</label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                    <p class="switch-text">Don't have an account? <button type="button" class="link-btn" data-switch="tabSignUp">Sign Up</button></p>
+                </form>
+            </div>
+
+            <!-- Sign Up -->
+            <div class="modal-panel" id="panelSignUp">
+                <p class="modal-subtitle">Create your account 🚀</p>
+                <form class="auth-form" id="formSignUp" novalidate>
+                    <div class="field-group">
+                        <label for="suUsername">Username</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="suUsername" placeholder="coolname123" required autocomplete="username">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="suEmail">Email</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">✉️</span>
+                            <input type="email" id="suEmail" placeholder="you@example.com" required autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="suPassword">Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="suPassword" placeholder="Min. 8 characters" required autocomplete="new-password">
+                            <button type="button" class="toggle-pw">👁️</button>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label for="suConfirm">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="suConfirm" placeholder="Repeat password" required autocomplete="new-password">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="suTerms"> I agree to the <a href="#" class="forgot-link">Terms of Service</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                    <p class="switch-text">Already have an account? <button type="button" class="link-btn" data-switch="tabSignIn">Sign In</button></p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

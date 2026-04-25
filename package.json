@@ -1,0 +1,43 @@
+{
+  "name": "streamlit-thesys",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "streamlit-component-lib": "^2.0.0",
+    "@thesysai/genui-sdk": "^0.6.27",
+    "@crayonai/react-ui": "^0.8.24",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "lucide-react": "^0.469.0"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": ".",
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.6"
+  }
+}
